@@ -66,6 +66,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="calculateButton" destination="Vqs-qL-Fvt" id="j28-i9-XJW"/>
+                        <outlet property="distanceA" destination="WE3-np-24Z" id="6zK-h4-3RC"/>
+                        <outlet property="distanceB" destination="KtS-BV-NEF" id="uGs-L2-81S"/>
+                        <outlet property="distanceC" destination="yFW-hq-OYC" id="neC-e9-rZp"/>
+                        <outlet property="endLocationA" destination="7BC-ql-wVH" id="nvh-vB-ktO"/>
+                        <outlet property="endLocationB" destination="owP-b1-WHP" id="5Gp-bW-Agu"/>
+                        <outlet property="endLocationC" destination="4F0-ND-aas" id="1Wt-o7-c1Q"/>
+                        <outlet property="startingLocation" destination="Bp8-rp-f3K" id="U3o-im-8nr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
