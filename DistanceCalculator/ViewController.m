@@ -12,6 +12,8 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *startingLocation;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *unitSelector;
+
 @property (weak, nonatomic) IBOutlet UITextField *endLocationA;
 @property (weak, nonatomic) IBOutlet UILabel *distanceA;
 
@@ -49,15 +51,28 @@
         int counter = 0;
         for (id response in responses) {
             if (response != badResult) {
-                double distance = [response floatValue]/1000;
-                NSString *tmp = [NSString stringWithFormat:@"%.2f km", distance];
+                double distance = 0;
+                NSString *tmp = @"";
+                switch (strongSelf.unitSelector.selectedSegmentIndex) {
+                    case 0:
+                        distance = [response floatValue];
+                        tmp = [NSString stringWithFormat:@"%.2f m", distance];
+                        break;
+                    case 1:
+                        distance = [response floatValue]/1000;
+                        tmp = [NSString stringWithFormat:@"%.2f km", distance];
+                        break;
+                    case 2:
+                        distance = [response floatValue]*0.000621371192;
+                        tmp = [NSString stringWithFormat:@"%.2f miles", distance];
+                        break;
+                }
                 ((UILabel*)[distances objectAtIndex:counter]).text = tmp;
             } else {
                 ((UILabel*)[distances objectAtIndex:counter]).text = @"Error";
             }
             ++counter;
         }
-
         
         strongSelf.calculateButton.enabled = YES;
         strongSelf.request = nil;
