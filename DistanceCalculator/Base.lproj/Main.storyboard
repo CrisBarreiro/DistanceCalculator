@@ -23,6 +23,9 @@
                                 <rect key="frame" x="93" y="322" width="134" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Calculate distances"/>
+                                <connections>
+                                    <action selector="onClickDistanceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5eY-Vf-Twt"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First destination" textAlignment="natural" minimumFontSize="17" id="7BC-ql-wVH">
                                 <rect key="frame" x="20" y="132" width="139" height="30"/>
